@@ -19,7 +19,7 @@ namespace TZ.WebApi.Services
             _logger = logger;
         }
 
-        public async Task<PagedList<ProductRatingsDTO>> GetProductRatingsWithPaging(long productId, PagingOptions pagingOptions, SortOrder sortOrder)
+        public async Task<PagedList<ProductRatingsDTO>> GetProductRatingsWithPagingAsync(long productId, PagingOptions pagingOptions, SortOrder sortOrder)
         {
             _logger.LogInformation("Get product ratings with paging. " +
                 "Product id = {productId}. Page = {page}. PageSize = {pageSize}", productId, pagingOptions.PageNumber, pagingOptions.PageSize);
@@ -38,7 +38,7 @@ namespace TZ.WebApi.Services
                 .PagingAsync(pagingOptions);
         }
 
-        public async Task<PagedList<AverageProductsRatingDTO>> GetAverageProductsRatingWithPaging(PagingOptions pagingOptions, SortOrder sortOrder)
+        public async Task<PagedList<AverageProductsRatingDTO>> GetAverageProductsRatingWithPagingAsync(PagingOptions pagingOptions, SortOrder sortOrder)
         {
             _logger.LogInformation("Get average product rating with paging. " +
                 "Page = {page}. PageSize = {pageSize}", pagingOptions.PageNumber, pagingOptions.PageSize);

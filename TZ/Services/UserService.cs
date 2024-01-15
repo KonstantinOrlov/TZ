@@ -16,7 +16,7 @@ namespace TZ.WebApi.Services
             _logger = logger;
         }
 
-        public async Task<List<UserRatingsDTO>> GetUserRatings(long userId)
+        public async Task<List<UserRatingsDTO>> GetUserRatingsAsync(long userId)
         {
             _logger.LogInformation("Get user ratings. User Id :{userId}", userId);
 

@@ -4,6 +4,6 @@ namespace TZ.WebApi.Services.Interfaces
 {
     public interface IUserService
     {
-        Task<List<UserRatingsDTO>> GetUserRatings(long userId);
+        Task<List<UserRatingsDTO>> GetUserRatingsAsync(long userId);
     }
 }

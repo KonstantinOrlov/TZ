@@ -21,7 +21,7 @@ namespace TZ.WebApi.Controllers
         [HttpGet("{productId}/ratings/paging")]
         public async Task<PagedList<ProductRatingsDTO>> GetProductRatingWithPaging([FromQuery] PagingOptions options, long productId, SortOrder sortOrder)
         {
-            var result = await _productService.GetProductRatingsWithPaging(productId, options, sortOrder);
+            var result = await _productService.GetProductRatingsWithPagingAsync(productId, options, sortOrder);
 
             var metadata = new
             {
@@ -42,7 +42,7 @@ namespace TZ.WebApi.Controllers
         [HttpGet("average-ratings/paging")]
         public async Task<PagedList<AverageProductsRatingDTO>> GetAverageProductsRatingWithPaging(SortOrder sortOrder, [FromQuery] PagingOptions options)
         {
-            var result = await _productService.GetAverageProductsRatingWithPaging(options, sortOrder);
+            var result = await _productService.GetAverageProductsRatingWithPagingAsync(options, sortOrder);
 
             var metadata = new
             {

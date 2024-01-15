@@ -18,7 +18,7 @@ namespace TZ.WebApi.Controllers
         [HttpGet("{userId}/ratings")]
         public async Task<List<UserRatingsDTO>> GetUserRatingWithPaging(long userId)
         {
-            var result = await _userService.GetUserRatings(userId);
+            var result = await _userService.GetUserRatingsAsync(userId);
 
             return result;
         }
